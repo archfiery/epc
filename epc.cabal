@@ -1,7 +1,7 @@
 name:                epc
 version:             0.1.0.0
 synopsis:            Initial project template from stack
-description:         Please see README.md
+description:         Please see README
 homepage:            https://github.com/githubuser/gtin#readme
 license:             MIT
 license-file:        LICENSE
@@ -10,13 +10,15 @@ maintainer:          b88d80170@gmail.com
 copyright:           2016 b88d80170
 category:            Web
 build-type:          Simple
-extra-source-files:  README.md
+extra-source-files:  README
 cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
+  exposed-modules:     Data.EPC
   build-depends:       base >= 4.7 && < 5
+                     , lens
+                     , mtl
   default-language:    Haskell2010
 
 executable gtin-exe

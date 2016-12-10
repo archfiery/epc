@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import Data.EPC ()
 
 main :: IO ()
-main = someFunc
+main = undefined
