@@ -1,2 +1,9 @@
+module Main where
+
+import Tests.EPC
+
+import Test.Hspec (hspec)
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = do
+  hspec testCageOrDODAACChar

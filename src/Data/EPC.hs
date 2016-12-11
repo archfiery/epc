@@ -18,6 +18,7 @@ import           Text.Read
 
 data EPCError = TypeMismatch
               | LengthOutOfBound
+              deriving (Show, Eq)
 
 makeClassyPrisms ''EPCError
 
@@ -34,7 +35,7 @@ padNum = undefined
 
 type GS3A3 = String
 gS3A3 :: (AsEPCError e, MonadError e m) => String -> m PadNum
-gS3A3 = undefined 
+gS3A3 = undefined
 
 type NumC = String
 numC :: (AsEPCError e, MonadError e m) => String -> m PadNum
@@ -45,11 +46,13 @@ cPRef :: (AsEPCError e, MonadError e m) => String -> m PadNum
 cPRef = undefined
 
 data CageOrDODAAC = CageCode | DODAAC
+  deriving (Show, Eq)
 
 type CageCode = [CageOrDODAACChar]
 
 type DODAAC = [CageOrDODAACChar]
 
+-- |Cage Code or DOD AAC Char
 type CageOrDODAACChar = Char
 cageOrDODAACChar :: (AsEPCError e, MonadError e m) => Char -> m CageOrDODAACChar
 cageOrDODAACChar c
